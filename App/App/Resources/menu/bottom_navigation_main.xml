@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/menu_medicos"
+      android:enabled="true"
+      android:icon="@drawable/medico"
+      android:title="@string/tab1_title"
+      app:showAsAction="ifRoom" />
+
+  <item
+      android:id="@+id/menu_especialidades"
+      android:enabled="true"
+      android:icon="@drawable/especialidades"
+      android:title="@string/tab2_title"
+      app:showAsAction="ifRoom" />
+
+  <item
+      android:id="@+id/menu_calendario"
+      android:enabled="true"
+      android:icon="@drawable/celendar"
+      android:title="@string/tab3_title"
+      app:showAsAction="ifRoom" />
+
+</menu>
