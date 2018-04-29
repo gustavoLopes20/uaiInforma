@@ -1,0 +1,136 @@
+<div class="container">
+
+    <div class="col-left">
+
+        <div class="formulario">
+
+            <div class="topo">
+                <button mat-button type="button" (click)="novoItem()"> <i class="fa fa-plus" aria-hidden="true"></i> Novo</button>
+                <button mat-button type="submit" (click)="salvarItem()" form="form01"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <button mat-button type="button" (click)="excluirItem()" class="del"> <i class="fa fa-trash-o" aria-hidden="true"></i> Excluir</button>
+            </div>
+
+            <div class="form">
+                <form id="form01">
+
+                    <div class="input-form">
+                        <label>Nome:</label>
+                        <input type="text" name="nome" [(ngModel)]="modelF1.Descricao" [disabled]="!novo">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="listagem">
+
+            <table class="table-list">
+
+                <tr class="topo">
+                    <th>Medicos</th>
+                </tr>
+
+                <tr class="content" *ngFor="let medico of medicos" (click)="editarItem(medico)">
+                    <td>{{medico.Descricao}}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-right">
+
+        <div class="formulario">
+
+            <div class="topo">
+                <button mat-button type="button" (click)="novoItem(2)"> <i class="fa fa-plus" aria-hidden="true"></i> Novo</button>
+                <button mat-button type="submit" (click)="salvarItem(2)" form="form02"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <button mat-button type="button" (click)="excluirItem(2)" class="del"> <i class="fa fa-trash-o" aria-hidden="true"></i> Excluir</button>
+            </div>
+
+            <div class="form">
+                <form id="form02">
+
+                    <div class="select input-form">
+                        <label>Unidade:</label>
+                        <select [(ngModel)]="modelF2.Unidade" name="sec" [disabled]="!novo2" (change)="changeSelect(1)">
+                            <option value=""></option>
+                            <option *ngFor="let und of unidades" [value]="und.Id">{{und.Descricao}}</option>
+                        </select>
+                    </div>
+
+                    <div class="select input-form">
+                        <label>Médico:</label>
+                        <select [(ngModel)]="modelF2.Medico" name="und" [disabled]="!novo2" (change)="changeSelect()">
+                            <option value=""></option>
+                            <option *ngFor="let med of medicos" [value]="med.Id">{{med.Descricao}}</option>
+                        </select>
+                    </div>
+
+                    <div class="select input-form">
+                        <label>Setor:</label>
+                        <select [(ngModel)]="modelF2.SetorUnidade" name="setor" [disabled]="!novo2" (change)="changeSelect()">
+                            <option value=""></option>
+                            <option *ngFor="let option1 of setores" [value]="option1.Id">{{option1.Setor.Descricao}}</option>
+                        </select>
+                    </div>
+
+                    <div class="select input-form">
+                        <label>Especialidade/Generalista:</label>
+                        <select [(ngModel)]="modelF2.EspecialidadeUnidade" name="espec" [disabled]="!novo2" (change)="changeSelect()">
+                            <option value=""></option>
+                            <option *ngFor="let option2 of especialidades" [value]="option2.Id">{{option2.Especialidade.Descricao}}</option>
+                        </select>
+                    </div>
+
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="listagem">
+
+            <nav class="list">
+
+                <div class="topo-list">
+                    <h3>Unidades</h3>
+                </div>
+
+                <ul>
+                    <li *ngFor="let unidade of unidades; let i = index">
+
+                        <button type="button" (click)="abrir(i)" [ngClass]="{'ac':atual == i}">{{unidade.Descricao}}</button>
+
+                        <table [ngClass]="{'active':atual == i}">
+
+                            <tr class="topo">
+                                <th>Médico</th>
+                                <th>Setor</th>
+                                <th>Especialidade/Generalista</th>
+                            </tr>
+
+                            <tr *ngFor="let med of unidade.medicos" class="content" (click)="editarSubItem(med)">
+                                <td>{{med.Medico.Descricao}}</td>
+                                <td>{{med.SetorUnidade.Setor.Descricao}}</td>
+                                <td>{{med.EspecialidadeUnidade.Especialidade.Descricao}}</td>
+                            </tr>
+
+                        </table>
+
+                    </li>
+                </ul>
+
+            </nav>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

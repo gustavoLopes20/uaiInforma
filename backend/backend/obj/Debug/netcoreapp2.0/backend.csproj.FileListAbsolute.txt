@@ -1,0 +1,11 @@
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\bin\Debug\netcoreapp2.0\backend.deps.json
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\bin\Debug\netcoreapp2.0\backend.runtimeconfig.json
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\bin\Debug\netcoreapp2.0\backend.runtimeconfig.dev.json
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\bin\Debug\netcoreapp2.0\backend.dll
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\obj\Debug\netcoreapp2.0\backend.csprojResolveAssemblyReference.cache
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\obj\Debug\netcoreapp2.0\backend.csproj.CoreCompileInputs.cache
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\obj\Debug\netcoreapp2.0\backend.AssemblyInfoInputs.cache
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\obj\Debug\netcoreapp2.0\backend.AssemblyInfo.cs
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\bin\Debug\netcoreapp2.0\backend.pdb
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\obj\Debug\netcoreapp2.0\backend.dll
+C:\Users\gusta\Documents\Desenvolvimento\uaiInforma\backend\backend\obj\Debug\netcoreapp2.0\backend.pdb

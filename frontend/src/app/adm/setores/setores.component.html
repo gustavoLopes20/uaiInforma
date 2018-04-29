@@ -1,0 +1,138 @@
+<div class="container">
+
+    <div class="col-left">
+
+        <div class="formulario">
+
+            <div class="topo">
+                <button mat-button type="button" (click)="novoItem()"> <i class="fa fa-plus" aria-hidden="true"></i> Novo</button>
+                <button mat-button type="submit" (click)="salvarItem()" form="form01"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+                <button mat-button type="button" (click)="excluirItem()" class="del"> <i class="fa fa-trash-o" aria-hidden="true"></i> Excluir</button>
+            </div>
+
+            <div class="form">
+                <form id="form01">
+
+                    <div class="input-form">
+                        <label>Descrição:</label>
+                        <input type="text" name="nome" [(ngModel)]="modelF1.Descricao" [disabled]="!novo">
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+        <div class="listagem">
+
+            <table class="table-list">
+
+                <tr class="topo">
+                    <th>Descrição</th>
+                </tr>
+
+                <tr class="content" *ngFor="let setor of setores" (click)="editarItem(setor)">
+                    <td>{{setor.descricao}}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <div class="col-right">
+
+        <div class="formulario">
+
+            <div class="topo">
+                <button mat-button type="button" (click)="novoItem(2)"> <i class="fa fa-plus" aria-hidden="true"></i> Novo</button>
+                <button mat-button type="submit" (click)="salvarItem(2)" form="form02"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+            </div>
+
+            <div class="form">
+                <form id="form02">
+
+                    <div class="select input-form">
+                        <label>Unidade:</label>
+                        <select [(ngModel)]="modelF2.Unidade" name="und" [disabled]="!novo2" (change)="changeSelect()">
+                            <option value=""></option>
+                            <option *ngFor="let und of unidades" [value]="und.rid">{{und.descricao}}</option>
+                        </select>
+                    </div>
+
+                    <div class="select input-form">
+                        <label>Setor:</label>
+                        <select [(ngModel)]="modelF2.Setor" name="setor" [disabled]="!novo2" (change)="changeSelect()">
+                            <option value=""></option>
+                            <option *ngFor="let option of setores" [value]="option.rid">{{option.descricao}}</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+
+
+        <div class="listagem">
+
+            <nav class="list">
+
+                <div class="topo-list">
+                    <h3>Unidades</h3>
+                </div>
+
+                <ul>
+                    <li *ngFor="let unidade of unidades; let i = index">
+
+                        <button type="button" (click)="abrir(i)" [ngClass]="{'ac':atual == i}">{{unidade.Descricao}}</button>
+
+                        <table [ngClass]="{'active':atual == i}">
+
+                            <tr class="topo">
+                                <th>Setor</th>
+                            </tr>
+
+                            <tr *ngFor="let set of unidade.setores" class="content">
+                                <td>{{set.setor.Descricao}}</td>
+                            </tr>
+
+                        </table>
+
+                    </li>
+                </ul>
+
+            </nav>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<!-- <div class="listagem">
+    
+                <table class="table-list">
+    
+                    <tr class="topo">
+                        <th>Unidade</th>
+                        <th>Setores</th>
+                    </tr>
+    
+                    <tr class="content" *ngFor="let unidade of unidades">
+                        <td>{{unidade.descricao}}</td>
+                        <td>
+                            <span *ngFor="let st of unidade.setores">
+                                {{st.descricao}} - 
+                            </span>
+                        </td>
+                    </tr>
+    
+                </table>
+    
+            </div> -->

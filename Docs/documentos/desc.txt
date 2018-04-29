@@ -1,0 +1,16 @@
+
+            Button btCalcular = FindViewById<Button>(Resource.Id.btCalcular);
+            EditText n1 = FindViewById<EditText>(Resource.Id.textN1);
+            EditText n2 = FindViewById<EditText>(Resource.Id.textN2);
+            EditText result = FindViewById<EditText>(Resource.Id.textResult);
+
+            btCalcular.Click += (object sender, EventArgs e) =>
+            {
+
+               double soma = Convert.ToDouble(n1.Text) + Convert.ToDouble(n2.Text);
+
+                result.Text = Convert.ToString(soma);
+               
+
+
+            };

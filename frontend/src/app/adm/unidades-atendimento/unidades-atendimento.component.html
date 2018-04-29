@@ -1,0 +1,62 @@
+<div class="container">
+
+    <div class="formulario">
+
+        <div class="topo">
+            <button mat-button type="button" (click)="novoItem()"> <i class="fa fa-plus" aria-hidden="true"></i> Novo</button>
+            <button mat-button type="submit" (click)="salvarItem()" form="form01"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+            <button mat-button type="button" (click)="excluirItem()" class="del"> <i class="fa fa-trash-o" aria-hidden="true"></i> Excluir</button>
+        </div>
+
+        <div class="form">
+            <form [formGroup]="formulario" id="form01">
+
+                <div class="input-form">
+                    <label>Nome:</label>
+                    <input type="text" name="nome" formControlName="Descricao">
+                </div>
+
+                <div class="input-form">
+                    <label>Endereço:</label>
+                    <input type="text" name="endereco" formControlName="Endereco">
+                </div>
+
+
+                <div class="input-form">
+                    <label>Bairro:</label>
+                    <input type="text" name="bairro" formControlName="Bairro">
+                </div>
+
+                <div class="input-form">
+                    <label>Telefone:</label>
+                    <input type="text" name="telefone" formControlName="Telefone">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="listagem">
+
+        <table class="table-list">
+
+            <tr class="topo">
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>Telefone</th>
+            </tr>
+
+            <tr class="content" *ngFor="let uai of lista" (click)="editarItem(uai)">
+                <td>{{uai.Descricao}}</td>
+                <td>{{uai.Endereco}}</td>
+                <td>{{uai.Bairro}}</td>
+                <td>{{uai.Telefone}}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>

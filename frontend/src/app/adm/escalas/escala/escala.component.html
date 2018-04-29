@@ -1,0 +1,93 @@
+<div class="container">
+
+    <div class="formulario">
+
+        <div class="topo">
+            <button mat-button type="submit" (click)="salvarItem()" form="form01"> <i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</button>
+            <button mat-button type="button" (click)="excluirItem()" class="del"> <i class="fa fa-trash-o" aria-hidden="true"></i> Excluir</button>
+        </div>
+
+        <div class="form">
+            <form id="form01">
+
+                <div class="select input-form">
+                    <label>Unidade</label>
+                    <select [(ngModel)]="model.Unidade" name="und" (change)="changeSelect(1)" required>
+                         <option value=""></option>
+                         <option *ngFor="let u of unidades" [value]="u.Id">{{u.Descricao}}</option>
+                    </select>
+                </div>
+
+                <div class="select input-form">
+                    <label>Setor</label>
+                    <select [(ngModel)]="model.SetorUnidade" name="set" required>
+                         <option value=""></option>
+                         <option *ngFor="let s of setoresUnidade" [value]="s.Id">{{s.Setor.Descricao}}</option>
+                    </select>
+                </div>
+
+                <div class="select input-form">
+                    <label>Especialidade/Generalista</label>
+                    <select [(ngModel)]="model.EspecialidadeUnidade" name="esp" required (change)="changeSelect()">
+                         <option value=""></option>
+                         <option *ngFor="let e of especialidadesUnidade" [value]="e.Id">{{e.Especialidade.Descricao}}</option>
+                    </select>
+                </div>
+
+                <div class="select input-form">
+                    <label>Medico</label>
+                    <select [(ngModel)]="model.MedicoUnidade" name="med" required (change)="changeSelect(0,false)">
+                         <option value=""></option>
+                         <option *ngFor="let m of medicosUnidade" [value]="m.Id">{{m.Medico.Descricao}}</option>
+                    </select>
+                </div>
+
+                <div class="input-form">
+                    <label>Data:</label>
+                    <input type="date" name="data" [(ngModel)]="model.Data" required>
+                </div>
+
+                <div class="input-form">
+                    <label>Hora Inicial:</label>
+                    <input type="time" name="hI" [(ngModel)]="model.Horario_Inicial" required>
+                </div>
+
+                <div class="input-form">
+                    <label>Hora Final:</label>
+                    <input type="time" name="hf" [(ngModel)]="model.Horario_Final" required>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <div class="listagem">
+
+        <div class="title"></div>
+
+        <table class="table-list">
+
+            <tr class="topo">
+                <th>Unidade</th>
+                <th>Setor</th>
+                <th>Especialiade/Generalista</th>
+                <th>Médico</th>
+                <th>Data</th>
+                <th>Horário</th>
+            </tr>
+
+            <tr class="content" *ngFor="let escala of lista" (click)="editarItem()">
+                <td>{{escala.Unidade.Descricao}}</td>
+                <td>{{escala.SetorUnidade.Setor.Descricao}}</td>
+                <td>{{escala.EspecialidadeUnidade.Especialidade.descricao}}</td>
+                <td>{{escala.MedicoUnidade.Medico.Descricao}}</td>
+                <td>{{escala.Data}}</td>
+                <td>{{escala.Horario_Inicial}} ás {{escala.Horario_Final}}</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <Button
+        android:text="Agenda dos Médicos"
+        android:layout_width="match_parent"
+        android:layout_height="75.3dp"
+        android:id="@+id/bt_agenda" />
+    <Button
+        android:text="Especialidades Atendidas"
+        android:layout_width="match_parent"
+        android:layout_height="75.3dp"
+        android:id="@+id/bt_esp" />
+    <Button
+        android:text="Plantões Por Setor"
+        android:layout_width="match_parent"
+        android:layout_height="75.3dp"
+        android:id="@+id/bt_plant" />
+    <Button
+        android:text="Segestões/Reclamações"
+        android:layout_width="match_parent"
+        android:layout_height="75.3dp"
+        android:id="@+id/bt_seg" />
+</LinearLayout>
