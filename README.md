@@ -1,4 +1,4 @@
-#UaiInforma<br>
+<h1>UaiInforma</h1><br>
 
 <h2>Introdução</h2>
 Uai informa é um aplicativo web/mobile (Projeto da faculdade: Projeto Integrador I - Ciências da Computação UNITRI-Uberlândia), que tem como objetivo informar os usuários a agenda das unidades de atendimento.
